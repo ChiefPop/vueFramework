@@ -1,0 +1,15 @@
+div
+  el-calendar("id"="test" "v-model"="date" "first-day-of-week"="firstDayOfWeek" "v-if"="testIf")
+    template("slot"="dateCell" "slot-scope"="{date, data}")
+      el-badge("class"="dateCell item" ":value"="todoList[data.day] ? todoList[data.day] : null" "@click.native"="showDateManager(data.day)")
+        p() {{ data.day.split('-').slice(2).join('-') }}
+        
+  el-dialog(":visible.sync"="dialogVisible" )
+    el-steps(":active"="active" "finish-status"="success")
+      el-step("title"="step 1")
+      el-step("title"="step 2")
+      el-step("title"="step 3")
+      el-step("title"="step 1")
+      el-step("title"="step 2")
+      el-step("title"="step 3")
+      

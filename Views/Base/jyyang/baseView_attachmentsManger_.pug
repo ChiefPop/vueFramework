@@ -1,0 +1,17 @@
+div
+  el-button-group("style"="float:right" "v-if"="showButton.btnList")
+    el-button("icon"="el-icon-delete" "@click"="handleIconDelete")
+    el-button("icon"="el-icon-folder-add" "@click"="handleIconAdd")
+  el-table(":data"="tableData" ":height"="tableHeight" ":style"="tableStyle" ":border"="showTableBoder" "ref"="multipleSelection"
+           "@selection-change"="handleSelectionChange" "v-loading"="loading")
+    el-table-column("type"="selection" "width"="55" "v-if"="showCheckbox")
+    el-table-column("label"="Number" "v-if"="showOrder" "width"="55" "prop"="order")
+    el-table-column("v-for"="(item, index) in tableColumns" "v-if"="item.show" ":label"="item.label" ":width"="item.width" ":prop"="item.prop" ":key"="index")
+    el-table-column("label"="Options" "v-if"="showOperating" ":width"="operatingWidth")
+      template("slot-scope"="scope")
+        el-button("v-if"="showButton.editBtn" "size"="mini" ":icon"="btnIcon.edit" "@click"="handleEdit(scope.$index, scope.row)") {{ btnText.editBtn }}
+        el-button("v-if"="showButton.replaceBtn" ":icon"="btnIcon.replace" "size"="mini" "@click"="handleReplace(scope.$index, scope.row)") {{ btnText.replaceText }}
+        el-button("v-if"="showButton.deleteBtn" ":icon"="btnIcon.delete" "size"="mini" "type"="danger" "@click"="handleDelete(scope.$index, scope.row)") {{ btnText.deleteText }}
+  input("style"="display:none" "type"="file" "name"="file" "id"="file" "@change"="addAttachments" )
+  input("style"="display:none" "type"="file" "name"="replaceFile" "id"="replaceFile" "@change"="replaceFile" )
+      

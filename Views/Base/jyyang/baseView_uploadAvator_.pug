@@ -1,0 +1,9 @@
+div
+  el-image(":style"="imageStyle" ":src"="url" ":preview-src-list"="srcList")
+    div(slot="error" class="image-slot")
+      div(":style"="defaultTextStyle" ":class"="textClass" @click="clickHandlerOfDefault") Click to upload avatar
+
+  input("style"="display:none" "type"="file" "id"="uploadFile" @change="changeHandlerOfUploadFile" ":accept"="accpetSuffix")
+
+  i(class="el-icon-circle-check uploadAvator" v-if="showColoseFullScreenDiv" @click="clickHanderOfUploadAvator")
+  i(class="el-icon-circle-close closeFullScreenDiv" "v-if"="showColoseFullScreenDiv" @click="clickHandlerOfRemoveFullScreenDiv")

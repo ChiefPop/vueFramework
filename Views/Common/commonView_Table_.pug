@@ -1,0 +1,3 @@
+el-table(":data"="tableDatas",":style"="tableStyle",":height"="tableHeight",":max-height"="tableHeight","@cell-click"="action_on_cellClick","@cell-mouse-enter"="action_on_cellEnter","@cell-mouse-leave"="action_on_cellLeave")
+  el-table-column("v-for"="tempColumn in tableColumns",":key"="tempColumn.columnIndex",":prop"="tempColumn.columnIndex",":label"="tempColumn.columnLabel",":width"="tempColumn.columnWidth","v-if"="!tempColumn.isFixed")
+  el-table-column("v-else","fixed",":key"="tempColumn.columnIndex",":prop"="tempColumn.columnIndex",":label"="tempColumn.columnLabel",":width"="tempColumn.columnWidth")  

@@ -1,0 +1,4 @@
+el-button(":type"="buttonType","round","v-if"="buttonStyle=='round'") {{buttonText}}
+el-button("v-else-if"="buttonStyle=='plain'",":type"="buttonType","plain") {{buttonText}}
+el-button("v-else-if"="buttonStyle=='circle'",":type"="buttonType",":icon"="get_Icon()","circle")
+el-button("v-else"="buttonType",":type"="buttonType") {{buttonText}}

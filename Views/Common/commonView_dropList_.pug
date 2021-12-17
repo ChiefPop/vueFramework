@@ -1,0 +1,4 @@
+el-select("v-model"="currentItem",":placeholder"="placeHolder",":size"="droplistSize","@change"="try_droplistSelect(currentItem)","@blur"="try_droplistBlur","v-if"="!isMultiple")
+  el-option("v-for"="tempItem in Items",":key"="tempItem.itemID",":label"="tempItem.itemText",":value"="tempItem.itemValue")
+el-select("v-else","v-model"="currentItems",multiple,":placeholder"="placeHolder",":size"="droplistSize","@change"="try_droplistSelect(currentItems)","@blur"="try_droplistBlur")
+  el-option("v-for"="tempItem in Items",":key"="tempItem.itemID",":label"="tempItem.itemText",":value"="tempItem.itemValue")

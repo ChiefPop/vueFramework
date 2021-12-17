@@ -1,0 +1,5 @@
+p("style"="white-space:pre-wrap","v-for"="paraObj in Texts",":Align"="paraObj.Align") 
+  br("v-for"="spanObj in paraObj.Spans","v-if"="spanObj.Text=='br'")
+  span("v-else-if"="spanObj.Link",":style"="spanObj.Style")
+    a(":href"="spanObj.Link") {{spanObj.Text}}
+  span("v-else",":style"="spanObj.Style") {{spanObj.Text}} 

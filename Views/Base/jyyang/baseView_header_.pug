@@ -1,0 +1,7 @@
+//- div(":style"="headerStyle" "class"="baseView_header")
+//-   div("v-for"="item in headerConstruction" ":style"="item.style" ":class"="test")
+//-     span("@click"="item.clickHandler") {{ item.text }}
+
+div("class"="headerWrapper")
+  el-menu("mode"="horizontal" "style"="border: none;" ":default-active"="activeIndex" ":background-color"="backgroundColor" ":text-color"="textColor" ":active-text-color"="activeTextColor" "@select"="clickMenu")
+    el-menu-item("v-for"="item in headerConstruction" ":key"="item.index" ":index"="item.index") {{ item.text }}
